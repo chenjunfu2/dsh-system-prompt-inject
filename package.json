@@ -1,0 +1,21 @@
+{
+  "name": "dsh-system-prompt-inject",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Append user-authored sections to the DeepSeek Harness system prompt at system rank",
+  "type": "module",
+  "main": "system-prompt-inject.mjs",
+  "exports": {
+    ".": "./system-prompt-inject.mjs"
+  },
+  "files": [
+    "system-prompt-inject.mjs"
+  ],
+  "scripts": {
+    "test": "node --test system-prompt-inject.test.mjs"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  }
+}

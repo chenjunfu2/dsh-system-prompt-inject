@@ -1,0 +1,29 @@
+# Profile patch snippet for dsh-system-prompt-inject.
+#
+# Append to your profile's `cordis.patch.yml`
+# (e.g. `~/.dsh/profiles/desktop/cordis.patch.yml`) and copy
+# `system-prompt-inject.mjs` beside it.
+#
+# The `./` prefix matters: the loader resolves an inserted `name` starting with
+# `./` relative to the patch file that declares it, turning it into a `file://`
+# URL. An absolute path or a bare package name also works.
+#
+# Adding a row to a profile patch requires the `insert:` wrapper. A bare
+# top-level `- id: ...` entry is read as a patch against an existing row and
+# fails with `patch: entry "<id>" not found`.
+#
+# Each row contributes one section. `name` defaults to `user:custom` and
+# `order` defaults to 50; set them to place several sections independently.
+
+- insert:
+    - id: system-prompt-inject-language
+      name: './system-prompt-inject.mjs'
+      config:
+        name: 'user:language-rule'
+        order: 50
+        text: |-
+          ## 语言规则
+
+          - 面向用户的回复默认使用中文，除非用户指定其他语言。
+          - 分析、推理与思考过程（thinking）内部以中文为主，除非用户指定其他语言。
+          - 代码、标识符、命令、技术术语及引用原文保留其必要的原始语言。

@@ -1,0 +1,3 @@
+# Normalize to LF in the repository regardless of the checking-out platform, so
+# the working tree, the diff, and the committed blobs agree on line endings.
+* text=auto eol=lf
